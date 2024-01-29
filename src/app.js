@@ -1,10 +1,11 @@
 const express = require('express');
-// const { userController, 
-//   postController, 
-//   loginController, 
-//   categoriesController } = require('./controller/index');
+// const { User } = require('./models');
 
-// const erroQuinhentos = require('./middlewares/InternalServerErrorQuinhentos');
+// const main = async () => {
+//   const users = await User.findAll();
+//   console.log(JSON.stringify(users));
+// };
+// main();
 
 const app = express();
 // não remova ou mova esse endpoint
@@ -12,6 +13,13 @@ app.get('/', (_request, response) => {
   response.send();
 });
 app.use(express.json());
+
+// const { userController, 
+//   postController, 
+//   loginController, 
+//   categoriesController } = require('./controller/index');
+
+// const erroQuinhentos = require('./middlewares/InternalServerErrorQuinhentos');
 
 // app.use('/login', rotaDeLogin);
 // app.use('/user', rotadeCategoria);
