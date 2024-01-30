@@ -1,4 +1,4 @@
-const rotaDeLogin = require('./rotasDeLogin');
+const { rotaDeLogin } = require('./rotasDeLogin');
 const rotaDeUsuario = require('./rotasDeCategoria');
 const rotadeCategoria = require('./rotasDeUsuario');
 const rotasPost = require('./rotaPost');
