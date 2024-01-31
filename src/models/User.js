@@ -1,37 +1,36 @@
-'use strict';
-
 module.exports = (sequelize, DataTypes) => {
-  const User = sequelize.define('User', 
+  const User = sequelize.define(
+    'User', 
     {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
       },
       displayName: {
         allowNull: false,
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
       },
       email: {
         allowNull: false,
         unique: true,
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
       },
       password: {
         allowNull: false,
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
       },
       image: {
         allowNull: false,
-        type: DataTypes.STRING
-      }
+        type: DataTypes.STRING,
+      },
     },
     {
       timestamps: false,
       tableName: 'users',
-      underscored: true
-    }
+      underscored: true,
+    },
   );
 
   // User.associate = ({ BlogPost }) => {
@@ -40,6 +39,5 @@ module.exports = (sequelize, DataTypes) => {
   //     foreignKey: 'id',
   //   })
   // }
-
   return User;
-}
+};

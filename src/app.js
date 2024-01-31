@@ -1,5 +1,5 @@
 const express = require('express');
-const { rotaDeLogin } = require('./router/index');
+const { rotaDeLogin, rotaDeUsuario } = require('./router/index');
 
 // const main = async () => {
 //   const users = await User.findAll();
@@ -17,8 +17,8 @@ app.get('/', (_request, response) => {
 // const erroQuinhentos = require('./middlewares/InternalServerErrorQuinhentos');
 
 app.use('/login', rotaDeLogin);
-// app.use('/user', rotadeCategoria);
-// app.use('/categories', rotaDeUsuario);
+app.use('/user', rotaDeUsuario);
+// app.use('/categories', );
 // app.use('/post', rotasPost);
 // app.use(erroQuinhentos);
 // ...

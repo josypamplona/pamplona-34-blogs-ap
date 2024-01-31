@@ -1,6 +1,6 @@
 const { rotaDeLogin } = require('./rotasDeLogin');
-const rotaDeUsuario = require('./rotasDeCategoria');
-const rotadeCategoria = require('./rotasDeUsuario');
+const { rotaDeUsuario } = require('./rotasDeUsuario');
+const rotadeCategoria = require('./rotasDeCategoria');
 const rotasPost = require('./rotaPost');
 
 module.exports = {
