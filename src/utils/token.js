@@ -2,14 +2,14 @@ const jwt = require('jsonwebtoken');
 
 const GERA_TOKEN = process.env.JWT_SECRET || 'seusecretdetoken';
 
-const config = {
-  expiresIn: '7d',
-  alg: 'HS256',
-};
+// const config = {
+//   expiresIn: '7d',
+//   alg: 'HS256',
+// };
 
 const criaToken = (payload) => { 
   try {
-    return jwt.sign(payload.dataValues, GERA_TOKEN, config);
+    return jwt.sign(payload, GERA_TOKEN);
   } catch (error) {
     return Error('token não encontrado');
   }
