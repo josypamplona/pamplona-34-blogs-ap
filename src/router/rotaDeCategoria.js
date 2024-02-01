@@ -1,10 +1,11 @@
 const express = require('express'); /// bliblioteca express
-const valCategories = require('../middlewares/valCategories');
+const { valCategories } = require('../middlewares/valCategories');
+const { validadorDeToken } = require('../utils/token');
 
 const rotaDeCategorias = express.Router(); /// criando umrotiadoreonomeando emcontnte
-const categoriaController = require('../controller/index');
+const { categoriesController } = require('../controller/index');
 
-rotaDeCategorias.post('/', valCategories, categoriaController); // utilizando esse roteador
+rotaDeCategorias.post('/', validadorDeToken, valCategories, categoriesController); // utilizando esse roteador
 
 module.exports = {
   rotaDeCategorias,

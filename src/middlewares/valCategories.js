@@ -7,7 +7,7 @@ const valCategories = (req, res, next) => {
   
   next();
 };
-  
+ 
 module.exports = {
   valCategories,
 };

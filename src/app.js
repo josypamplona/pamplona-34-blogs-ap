@@ -1,5 +1,5 @@
 const express = require('express');
-const { rotaDeLogin, rotaDeUsuario } = require('./router/index');
+const { rotaDeLogin, rotaDeUsuario, rotaDeCategorias } = require('./router/index');
 
 const app = express();
 // não remova ou mova esse endpoint
@@ -12,7 +12,7 @@ app.get('/', (_request, response) => {
 
 app.use('/login', rotaDeLogin);
 app.use('/user', rotaDeUsuario);
-// // app.use('/categories', rotaDeCategoria);
+app.use('/categories', rotaDeCategorias);
 // app.use('/post', rotaPost);
 // app.use(erroQuinhentos);
 // ...
