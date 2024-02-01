@@ -17,8 +17,18 @@ const userService = async (userData) => {
   };
 
   const token = criaToken(payload);
-
   return { status: 201, token };
 };
 
-module.exports = { userService };
+const todosOsUsuariosService = async () => {
+  const users = await User.findAll({
+    attributes: ['id', 'displayName', 'email', 'image'],
+  });
+
+  return users;
+};
+
+module.exports = { 
+  userService,
+  todosOsUsuariosService,
+};
