@@ -7,9 +7,11 @@ const {
   usuarioController,
   todosOsUsuariosController,
 } = require('../controller/index');
+const { usuarioPorId } = require('../controller/userController');
 
 rotaDeUsuario.post('/', valUser, usuarioController); // utilizando esse roteador
 rotaDeUsuario.get('/', validadorDeToken, todosOsUsuariosController);
+rotaDeUsuario.get('/:id', validadorDeToken, usuarioPorId);
 module.exports = {
   rotaDeUsuario,
 }; // se abre a chave tem que abrir chave na exportação

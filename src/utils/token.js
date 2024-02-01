@@ -27,7 +27,6 @@ const validadorDeToken = (req, res, next) => {
   try {
     const token = bearerToken.split(' ')[1];
     const payload = jwt.verify(token, GERA_TOKEN, config);
-    console.log(bearerToken.split(' '), 'tttttttttt');
     req.user = payload.id; 
 
     next();

@@ -27,8 +27,16 @@ const todosOsUsuariosService = async () => {
 
   return users;
 };
+const usuarioPorIdService = async (id) => {
+  const users = await User.findByPk(id, {
+    attributes: ['id', 'displayName', 'email', 'image'],
+  });
+  if (!users) return { status: 409, message: 'User does not exist' };
+  return users;
+};
 
 module.exports = { 
   userService,
   todosOsUsuariosService,
+  usuarioPorIdService,
 };

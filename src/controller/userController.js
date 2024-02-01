@@ -1,5 +1,6 @@
 const { userService,
-  todosOsUsuariosService } = require('../service/usuarioService');
+  todosOsUsuariosService,
+  usuarioPorIdService } = require('../service/usuarioService');
 
 const usuarioController = async (req, res) => {
   const { displayName, email, password, image } = req.body;
@@ -21,9 +22,15 @@ async function todosOsUsuariosController(req, res) {
   const users = await todosOsUsuariosService();
   return res.status(200).json(users);
 }
-
+const usuarioPorId = async (req, res) => {
+  const { id } = req.params;
+  const { status, message } = await usuarioPorIdService(id);
+  if (status) return res.status(409).json({ message });
+  return res.status(200).json(message);
+};
 module.exports = {
   usuarioController,
   todosOsUsuariosController,
+  usuarioPorId,
 
 };
