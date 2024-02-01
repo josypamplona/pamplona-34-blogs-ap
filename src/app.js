@@ -12,7 +12,7 @@ app.get('/', (_request, response) => {
 
 app.use('/login', rotaDeLogin);
 app.use('/user', rotaDeUsuario);
-// app.use('/categories', rotaDeCategoria);
+// // app.use('/categories', rotaDeCategoria);
 // app.use('/post', rotaPost);
 // app.use(erroQuinhentos);
 // ...

@@ -31,8 +31,8 @@ const usuarioPorIdService = async (id) => {
   const users = await User.findByPk(id, {
     attributes: ['id', 'displayName', 'email', 'image'],
   });
-  if (!users) return { status: 409, message: 'User does not exist' };
-  return users;
+  if (!users) return { status: 404, message: 'User does not exist' };
+  return { status: 200, message: users };
 };
 
 module.exports = { 

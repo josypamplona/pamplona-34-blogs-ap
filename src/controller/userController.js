@@ -25,8 +25,7 @@ async function todosOsUsuariosController(req, res) {
 const usuarioPorId = async (req, res) => {
   const { id } = req.params;
   const { status, message } = await usuarioPorIdService(id);
-  if (status) return res.status(409).json({ message });
-  return res.status(200).json(message);
+  return res.status(status).json(message);
 };
 module.exports = {
   usuarioController,
